@@ -1,0 +1,129 @@
+{
+    "type": "object",
+    "title": "slideshow",
+    "definitions": {
+        "slideImage": {
+            "type": "object",
+            "properties": {
+                "image": {
+                    "$ref": "/components/shared-definition.json#/definitions/image"
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "image"
+                    ]
+                }
+            },
+            "required": [
+                "type"
+            ]
+        }
+    },
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "title": {
+            "type": "string"
+        },
+        "initial": {
+            "$ref": "#/definitions/slideImage"
+        },
+        "slides": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "title": "Image",
+                        "$ref": "#/definitions/slideImage"
+                    },
+                    {
+                        "title": "Videoplayer",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "video"
+                                ]
+                            },
+                            "image": {
+                                "$ref": "/components/shared-definition.json#/definitions/image"
+                            },
+                            "videoplayer": {
+                                "$ref": "/components/videoplayer/schema.json"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Slideshow",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "slideshow"
+                                ]
+                            },
+                            "image": {
+                                "$ref": "/components/shared-definition.json#/definitions/image"
+                            },
+                            "slideshow": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    },
+                                    "title": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "title": "Link",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "link"
+                                ]
+                            },
+                            "link": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "image": {
+                                "$ref": "/components/shared-definition.json#/definitions/image"
+                            }
+                        }
+                    },
+                    {
+                        "title": "Voting",
+                        "type": "object",
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "enum": [
+                                    "voting"
+                                ]
+                            },
+                            "communityObject": {
+                                "$ref": "/components/shared-definition.json#/definitions/communityObject"
+                            }
+                        }
+                    }
+                ]
+            },
+            "minItems": 2
+        }
+    },
+    "required": [
+        "id",
+        "initial",
+        "slides"
+    ]
+}

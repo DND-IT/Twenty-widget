@@ -1,0 +1,10 @@
+Twenty.i18n.Components.slideshow = {
+    "de": {
+        "voteMessage": "War diese Bildstrecke sehenswert?",
+        "creditTitle": "Bild: "
+    },
+    "fr": {
+        "voteMessage": "Ce diaporama vous a plu?",
+        "creditTitle": "Image: "
+    }
+};
