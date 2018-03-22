@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="twenty_app_mmxvii">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
+    <title>Widget Test StaticPage</title>
+    <link rel="stylesheet" type="text/css" href="css/twenty.css">
+    <script src="./twenty.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="widgetTest"></div>
+
+    <script>
+    var slideshowdemodata = {
+            "id": 12,
+            "title": "testslides",
+            "initial": {
+            "image": {
+              "sources": [
+                {
+                  "src": "assets/pics/cat1.jpg",
+                  "width": 500,
+                  "height": 300
+                }
+            ],
+              "caption": "test",
+              "credit": ""
+            },
+            "type": "voting"
+            },
+        "slides": [
+            {
+              "image": {
+                "sources": [
+                  {
+                    "src": "assets/pics/cat1.jpg",
+                    "width": 500,
+                    "height": 300
+                  }
+                ],
+                "caption": "Dr. Garfield",
+                "credit": "john f"
+              },
+              "type": "image"
+            },
+            {
+              "image": {
+                "sources": [
+                  {
+                    "src": "assets/pics/cat2.jpg",
+                    "width": 500,
+                    "height": 300
+                  }
+                ],
+                "caption": "computercat",
+                "credit": ""
+              },
+              "type": "image"
+            },
+            {
+              "image": {
+                "sources": [
+                  {
+                    "src": "assets/pics/cat3.jpg",
+                    "width": 500,
+                    "height": 300
+                  }
+                ],
+                "caption": "Monorail cat",
+                "credit": ""
+              },
+              "type": "image"
+            },
+            {
+              "image": {
+                "sources": [
+                  {
+                    "src": "https://upload.wikimedia.org/wikipedia/commons/5/58/Pyramidblaster.gif",
+                    "width": 500,
+                    "height": 300
+                  }
+                ],
+                "caption": "the KLF",
+                "credit": "Pyramidblaster"
+              },
+              "type": "image"
+            }
+        ]
+    }
+
+
+    var widget = Twenty.widget.create("slideshow", "widgetTest", slideshowdemodata);
+    </script>
+
+</body>
+</html>
